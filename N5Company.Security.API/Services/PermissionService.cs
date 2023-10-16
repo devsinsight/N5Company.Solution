@@ -43,20 +43,30 @@ namespace N5Company.Security.API.Services
 
         public async Task Handle(SavePermissionCommand request, CancellationToken cancellationToken)
         {
-            var permission = new Permission
+            try
             {
-                ApellidoEmpleado = request.ApellidoEmpleado,
-                NombreEmpleado = request.NombreEmpleado,
-                TipoPermisoId = request.TipoPermisoId,
-                FechaPermiso = request.FechaPermiso
-            };
+                var permission = new Permission
+                {
+                    ApellidoEmpleado = request.ApellidoEmpleado,
+                    NombreEmpleado = request.NombreEmpleado,
+                    TipoPermisoId = request.TipoPermisoId,
+                    FechaPermiso = request.FechaPermiso
+                };
 
-            await _repository.AddAsync(permission);
+                await _repository.AddAsync(permission);
 
-            await _unitOfWork.SaveAsync();
+                await _unitOfWork.SaveAsync();
 
-            await N5CompanyBroker.SendOperation("Add");
-            await N5CompanyBroker.SendEvent(permission);
+                await N5CompanyBroker.SendOperation("Add");
+                await N5CompanyBroker.SendEvent(permission);
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+            
+           
         }
 
         public async Task Handle(UpdatePermissionCommand request, CancellationToken cancellationToken)

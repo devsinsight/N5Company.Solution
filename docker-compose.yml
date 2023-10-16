@@ -6,6 +6,9 @@ services:
     build:
       context: .
       dockerfile: N5Company.Security.API/Dockerfile
+    ports:
+      - '5000:80'
+      - '5001:443'
   n5company.security.ui:
     image: ${DOCKER_REGISTRY-}n5companysecurityui
     build:

@@ -9,7 +9,7 @@ class PermissionService {
 
     constructor() {
         this.api = axios.create({
-            baseURL: 'https://localhost:61854/api/v1/security', // Reemplaza con la URL de tu propia API
+            baseURL: 'https://localhost:5001/api/v1/security', // Reemplaza con la URL de tu propia API
         });
     }
 
