@@ -8,7 +8,8 @@ namespace N5Company.Security.Kafka
 
         public static async Task SendMessage(string topic, string message)
         {
-            var config = new ProducerConfig { BootstrapServers = "localhost:29092" };
+            //for external use: localhost:29092
+            var config = new ProducerConfig { BootstrapServers = "broker:9092" };
 
             using (var p = new ProducerBuilder<Null, string>(config).Build())
             {

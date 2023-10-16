@@ -28,7 +28,10 @@ namespace N5Company.Security.API.Services
             var client = new ElasticClient(connectionSettings);
             var elasticsearch = new ES.Elasticsearch(client, "permission");
             var result = await elasticsearch.GetAll<dynamic>();
+
             await N5CompanyBroker.SendOperation("Get");
+
+            if(result == null) return new PermissionResponse();
 
             return new PermissionResponse
             {

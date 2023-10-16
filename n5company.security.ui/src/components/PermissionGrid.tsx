@@ -21,7 +21,7 @@ const PermissionGrid: React.FC<PermissionGridProps> = ({ permissions, setSelecte
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {permissions.map((permission) => (
+                    {permissions && permissions.map((permission) => (
                         <TableRow
                             key={permission.Id}
                             onClick={() => setSelectedPermission(permission)}

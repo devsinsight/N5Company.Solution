@@ -7,17 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N5Company.Security.API", "N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N5Company.Security.Repository", "N5Company.Security.Repository\N5Company.Security.Repository.csproj", "{7EF4AF6E-6ADC-4C26-A3BE-4D58298FE5F9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BA721960-0968-4BE2-8B45-1CBA81A78F62}"
-	ProjectSection(SolutionItems) = preProject
-		Infrastructure\docker-compose.yml = Infrastructure\docker-compose.yml
-		Infrastructure\Elasticsearch.postman_collection.json = Infrastructure\Elasticsearch.postman_collection.json
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N5Company.Security.Kafka", "N5Company.Security.Kafka\N5Company.Security.Kafka.csproj", "{B4F0A2A8-133F-42B4-A82D-8351BDA68773}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N5Company.Security.Elasticsearch", "N5Company.Security.Elasticsearch\N5Company.Security.Elasticsearch.csproj", "{507100DE-4D54-4A96-9B9A-CD084C5526A8}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "n5company.security.ui", "N5Company.Security.UI\n5company.security.ui.esproj", "{DA2F798F-E094-40B0-840F-6622E05C3CDB}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D84223C1-AC54-4E06-833D-A97803CF5940}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +43,10 @@ Global
 		{DA2F798F-E094-40B0-840F-6622E05C3CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA2F798F-E094-40B0-840F-6622E05C3CDB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DA2F798F-E094-40B0-840F-6622E05C3CDB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D84223C1-AC54-4E06-833D-A97803CF5940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D84223C1-AC54-4E06-833D-A97803CF5940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D84223C1-AC54-4E06-833D-A97803CF5940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D84223C1-AC54-4E06-833D-A97803CF5940}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
