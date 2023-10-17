@@ -139,3 +139,17 @@ services:
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
+
+  n5company.database:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    hostname: sql-server
+    container_name: sql-server
+    ports:
+    - 1433:1433
+    command: bash -c "chmod -R 777 /usr/src/sql/ && /usr/src/sql/entrypoint.sh"
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: Pass@w0rd1
+      MSSQL_PID: Express
+    volumes:
+      - ./mssql_database/:/usr/src/sql/

@@ -24,7 +24,7 @@ namespace N5Company.Security.API.Services
 
         public async Task<PermissionResponse> Handle(PermissionRequest request, CancellationToken cancellationToken)
         {
-            var connectionSettings = new ConnectionSettings(new Uri("http://localhost:9200"));
+            var connectionSettings = new ConnectionSettings(new Uri("http://elastic:9200"));
             var client = new ElasticClient(connectionSettings);
             var elasticsearch = new ES.Elasticsearch(client, "permission");
             var result = await elasticsearch.GetAll<dynamic>();
