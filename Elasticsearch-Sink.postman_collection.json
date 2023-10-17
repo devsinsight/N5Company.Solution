@@ -1,13 +1,13 @@
 {
 	"info": {
 		"_postman_id": "05ce5ddc-1a7d-491b-a005-cbc5cd70a0ad",
-		"name": "Elasticsearch",
+		"name": "Elasticsearch-Sink",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "1142683"
 	},
 	"item": [
 		{
-			"name": "Create Sink Index",
+			"name": "Permissions Topic",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -35,10 +35,30 @@
 			"response": []
 		},
 		{
-			"name": "Delete Documents",
+			"name": "Events Topic",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"elasticsearch-sink-events\",\r\n  \"config\": {\r\n    \"connector.class\": \"io.confluent.connect.elasticsearch.ElasticsearchSinkConnector\",\r\n    \"tasks.max\": \"1\",\r\n    \"topics\": \"n5company-events\",\r\n    \"key.ignore\": \"true\",\r\n    \"schema.ignore\": \"true\",\r\n    \"connection.url\": \"http://elastic:9200\",\r\n    \"type.name\": \"_doc\",\r\n    \"name\": \"elasticsearch-sink-events\",\r\n    \"value.converter\": \"org.apache.kafka.connect.json.JsonConverter\",\r\n    \"value.converter.schemas.enable\": \"false\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/connectors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"connectors"
+					]
+				}
 			},
 			"response": []
 		}
